@@ -1,0 +1,15 @@
+{
+  "enterLogin": "Enter your login",
+  "enterPassword": "Enter your password",
+  "signIn": "Sign in",
+  "authErrorDialogText": "Something went wrong!\nTry again\n\nLogin and password can be found on your game club card",
+  "greetUser": "Hi, {username}!",
+  "@greetUser": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "authGreetText": "Welcome to \"ArenaCLUB\" game club",
+  "next": "Next",
+  "close": "Close"
+}

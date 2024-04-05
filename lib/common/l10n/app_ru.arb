@@ -1,0 +1,15 @@
+{
+  "enterLogin": "Введите Ваш логин",
+  "enterPassword": "Введите Ваше пароль",
+  "signIn": "Войти",
+  "authErrorDialogText": "Что-то пошло не так!\nПопробуйте ещё раз\n\nЛогин и пароль можете найти на Вашей карточке игрового клуба",
+  "greetUser": "Привет, {username}!",
+  "@greetUser": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "authGreetText": "Добро пожаловать в игровой клуб \"ArenaCLUB\"",
+  "next": "Далее",
+  "close": "Закрыть"
+}

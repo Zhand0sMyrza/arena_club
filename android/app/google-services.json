@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180848691599",
+    "project_id": "arenaclub-8049d",
+    "storage_bucket": "arenaclub-8049d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180848691599:android:13638f4b7adf84c0a8a3fa",
+        "android_client_info": {
+          "package_name": "com.example.arena_club"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180848691599-nt8mgkdpba9n1oemmtuublii960fbooq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkvcLQ5k5G5KWKarp-f2Qjh-xWEvdjOv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180848691599-nt8mgkdpba9n1oemmtuublii960fbooq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
