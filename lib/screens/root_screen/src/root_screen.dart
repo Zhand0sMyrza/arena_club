@@ -17,55 +17,44 @@ class RootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocConsumer<AppMainBloc, AppMainState>(
-        listener: (context, state) {
-          if (state is AppSplashState) {
-            showGeneralDialog(
-              context: context,
-              barrierDismissible: false,
-              pageBuilder: (context, _, __) => const AppSplashScreen(),
-            );
-          }
-          if (state is AppStartedState && !state.isAuthorized) {
-            context.rootNavigator.pop();
-            showGeneralDialog(
-              context: context,
-              barrierDismissible: false,
-              pageBuilder: (context, _, __) => ChangeNotifierProvider(
-                create: (context) => AuthScreenVM(),
-                child: const AuthorizationScreen(),
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          if (state is AppStartedState) {
-            if (state.isAuthorized) {
-              context.rootNavigator.pop();
-            }
-            return Consumer<RootScreenVM>(
-              builder: (context, vm, child) {
-                return IndexedStack(
-                  index: vm.activeIndex,
-                  children: [
-                    Navigator(
-                      key: vm.navigatorKeys[0],
-                      onGenerateRoute: gameNewsScreenRoute,
-                    ),
-                    Navigator(
-                      key: vm.navigatorKeys[1],
-                      onGenerateRoute: profileScreenRoute,
-                    ),
-                  ],
-                );
-              },
-            );
-          }
-          return const Center(child: CircularProgressIndicator());
-        },
-      ),
-      bottomNavigationBar: const AppBottomNavigationBar(),
+    return BlocConsumer<AppMainBloc, AppMainState>(
+      listener: (context, state) {
+        if (state is AppStartedState && !state.isAuthorized) {
+          showGeneralDialog(
+            context: context,
+            barrierDismissible: false,
+            pageBuilder: (context, _, __) => ChangeNotifierProvider(
+              create: (context) => AuthScreenVM(),
+              child: const AuthorizationScreen(),
+            ),
+          );
+        }
+      },
+      builder: (context, state) {
+        if (state is AppSplashState) {
+          return const AppSplashScreen();
+        }
+        return Scaffold(
+          body: Consumer<RootScreenVM>(
+            builder: (context, vm, child) {
+              return IndexedStack(
+                index: vm.activeIndex,
+                children: [
+                  Navigator(
+                    key: vm.navigatorKeys[0],
+                    onGenerateRoute: gameNewsScreenRoute,
+                  ),
+                  Navigator(
+                    key: vm.navigatorKeys[1],
+                    onGenerateRoute: profileScreenRoute,
+                  ),
+                ],
+              );
+            },
+          ),
+          bottomNavigationBar: const AppBottomNavigationBar(),
+        );
+      },
     );
   }
 }

@@ -4,3 +4,5 @@ part of 'app_main_bloc.dart';
 sealed class AppMainEvent {}
 
 final class AppStartedEvent extends AppMainEvent{}
+
+final class LogoutEvent extends AppMainEvent{}

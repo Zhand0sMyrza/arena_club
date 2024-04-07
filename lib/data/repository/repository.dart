@@ -1,9 +1,12 @@
 import 'package:arena_club/common/l10n/dio_locale/base_dio_locale.dart';
 import 'package:arena_club/common/l10n/dio_locale/ru_dio_locale.dart';
 import 'package:arena_club/data/repository/dio_settings.dart';
+import 'package:arena_club/data/repository/interfaces/base_auth_repo.dart';
 import 'package:arena_club/data/repository/interfaces/base_game_news_repo.dart';
+import 'package:arena_club/data/repository/interfaces/base_profile_repo.dart';
 import 'package:arena_club/data/server/auth_repo.dart';
 import 'package:arena_club/data/server/game_news_repo.dart';
+import 'package:arena_club/data/server/profile_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Repository {
@@ -13,7 +16,8 @@ class Repository {
 
   late final SharedPreferences _prefs;
   late final BaseGameNewsRepository gameNewsRepo;
-  late final AuthRepository authRepo;
+  late final BaseAuthRepository authRepo;
+  late final BaseProfileRepository profileRepo;
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
@@ -25,6 +29,7 @@ class Repository {
 
     authRepo = AuthRepository(dio: _dio, prefs: _prefs, url: _baseUrl);
     gameNewsRepo = GameNewsRepository(dio: _dio, url: _baseUrl);
+    profileRepo = ProfileRepository(prefs: _prefs);
   }
 
   BaseDioLocale _getDioLocale(SharedPreferences prefs) {

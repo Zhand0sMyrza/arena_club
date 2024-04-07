@@ -22,7 +22,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       isAuthorized = await repo.authRepo.isAuthorized();
     } catch (e) {
-
       emit(AuthFailureState());
     }
   }

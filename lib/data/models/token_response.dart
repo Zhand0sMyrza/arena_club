@@ -46,4 +46,14 @@ class UserModel {
       image: json['image'],
     );
   }
+
+  Map<String, dynamic> toJson(){
+    return {
+      'name': name,
+      'level': level,
+      'level_progress': levelProgress,
+      'balance': balance,
+      'image': image,
+    };
+  }
 }

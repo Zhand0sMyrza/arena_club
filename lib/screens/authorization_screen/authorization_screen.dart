@@ -7,6 +7,7 @@ import 'package:arena_club/common/gen/assets.gen.dart';
 import 'package:arena_club/screens/authorization_screen/src/auth_screen_view_model.dart';
 import 'package:arena_club/screens/authorization_screen/src/bloc/auth_bloc.dart';
 import 'package:arena_club/screens/authorization_screen/src/components/auth_success_dialog.dart';
+import 'package:arena_club/screens/profile_screen/src/bloc/profile_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -38,9 +39,14 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
             }
             if (state is AuthorizedState) {
               vm.setLoading(false);
-              showAuthSuccessDialog(context, state.username).whenComplete(
-                context.rootNavigator.pop,
-              );
+              showAuthSuccessDialog(context, state.username)
+                  .whenComplete(
+                    context.rootNavigator.pop,
+                  )
+                  .whenComplete(
+                    () =>
+                        context.read<ProfileBloc>()..add(UpdateProfileEvent()),
+                  );
             }
           },
           child: Padding(

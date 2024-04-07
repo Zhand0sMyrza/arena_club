@@ -8,6 +8,7 @@ class ProfileCard extends StatelessWidget {
     required this.level,
     required this.progressValue,
     required this.balance,
+    this.isLoading = false,
   });
 
   final String? userImage;
@@ -15,6 +16,17 @@ class ProfileCard extends StatelessWidget {
   final int level;
   final int progressValue;
   final double balance;
+  final bool isLoading;
+
+  factory ProfileCard.placeholder() {
+    return const ProfileCard(
+      userName: 'banana',
+      level: 5,
+      progressValue: 100,
+      balance: 1234,
+      isLoading: true,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,52 +36,65 @@ class ProfileCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const AppCachedNetworkImage(
-                imageUrl: null,
-                width: 100,
-                height: 100,
-                borderRadius: 12,
+              ShimmerPlaceholder(
+                isLoading: isLoading,
+                child:  AppCachedNetworkImage(
+                  imageUrl: userImage,
+                  width: 100,
+                  height: 100,
+                  borderRadius: 12,
+                  fit: BoxFit.cover,
+                ),
               ),
               const SizedBox(width: 24),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    userName,
-                    style: context.textTheme.s24w600(context),
+                  ShimmerPlaceholder(
+                    isLoading: isLoading,
+                    child: Text(
+                      userName,
+                      style: context.textTheme.s24w600(context),
+                    ),
                   ),
                   const SizedBox(height: 8),
-                  Text('${context.locale?.level}: $level'),
+                  ShimmerPlaceholder(
+                    isLoading: isLoading,
+                    child: Text('${context.locale?.level}: $level'),
+                  ),
                   const SizedBox(height: 4),
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        height: 24,
-                        width: context.mqSize.width / 2,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          color: context.theme.levelProgressBgColor,
-                        ),
-                      ),
-                      Positioned(
-                        left: 0,
-                        child: Container(
-                          height: 22,
-                          width: context.mqSize.width /
-                              2 *
-                              _calculateProgressPercentage(
-                                  level, progressValue),
+                  ShimmerPlaceholder(
+                    isLoading: isLoading,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          height: 24,
+                          width: context.mqSize.width / 2,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
-                            color: context.theme.levelProgressBarColor,
+                            color: context.theme.levelProgressBgColor,
                           ),
                         ),
-                      ),
-                      Text(
-                        '$progressValue / ${_calculateValueForNextLevel(level)}',
-                      )
-                    ],
+                        Positioned(
+                          left: 0,
+                          child: Container(
+                            height: 22,
+                            width: context.mqSize.width /
+                                2 *
+                                _calculateProgressPercentage(
+                                    level, progressValue),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              color: context.theme.levelProgressBarColor,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '$progressValue / ${_calculateValueForNextLevel(level)}',
+                        )
+                      ],
+                    ),
                   ),
                 ],
               )
@@ -87,20 +112,23 @@ class ProfileCard extends StatelessWidget {
                 color: Colors.yellow,
               ),
               const SizedBox(width: 8),
-              Text.rich(
-                TextSpan(
-                  text: '${context.locale?.balance}: ',
-                  style: context.textTheme.s18w600(context),
-                  children: [
-                    TextSpan(
-                      text: balance.toStringAsFixed(2),
-                      style: context.textTheme.s18w600(context).copyWith(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.yellow,
-                          ),
-                    ),
-                    const TextSpan(text: ' ₸'),
-                  ],
+              ShimmerPlaceholder(
+                isLoading: isLoading,
+                child: Text.rich(
+                  TextSpan(
+                    text: '${context.locale?.balance}: ',
+                    style: context.textTheme.s18w600(context),
+                    children: [
+                      TextSpan(
+                        text: balance.toStringAsFixed(2),
+                        style: context.textTheme.s18w600(context).copyWith(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.yellow,
+                            ),
+                      ),
+                      const TextSpan(text: ' ₸'),
+                    ],
+                  ),
                 ),
               ),
               const Spacer(),
