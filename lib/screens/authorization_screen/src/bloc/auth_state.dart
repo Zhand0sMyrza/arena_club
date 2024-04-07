@@ -13,8 +13,4 @@ final class AuthorizedState extends AuthState {
   AuthorizedState({required this.username});
 }
 
-final class AuthFailureState extends AuthState {
-  final String errorText;
-
-  AuthFailureState({required this.errorText});
-}
+final class AuthFailureState extends AuthState {}

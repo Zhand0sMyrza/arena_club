@@ -11,17 +11,17 @@ class AppBottomNavigationBar extends StatelessWidget {
       color: Colors.black87,
       height: 72,
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: const Row(
+      child:  Row(
         children: [
           _NavBarItem(
             index: 0,
-            icon: Icon(Icons.newspaper),
-            label: 'News',
+            icon: const Icon(Icons.dashboard_outlined),
+            label: context.locale?.library ?? '',
           ),
           _NavBarItem(
             index: 1,
-            icon: Icon(Icons.person_2_outlined),
-            label: 'Profile',
+            icon: const Icon(Icons.person_2_outlined),
+            label: context.locale?.profile ?? '',
           ),
         ],
       ),

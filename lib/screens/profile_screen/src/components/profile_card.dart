@@ -39,7 +39,7 @@ class ProfileCard extends StatelessWidget {
                     style: context.textTheme.s24w600(context),
                   ),
                   const SizedBox(height: 8),
-                  Text('Level: $level'),
+                  Text('${context.locale?.level}: $level'),
                   const SizedBox(height: 4),
                   Stack(
                     alignment: Alignment.center,
@@ -56,8 +56,10 @@ class ProfileCard extends StatelessWidget {
                         left: 0,
                         child: Container(
                           height: 22,
-                          width: context.mqSize.width / 2 * _calculateProgressPercentage(
-                              level, progressValue),
+                          width: context.mqSize.width /
+                              2 *
+                              _calculateProgressPercentage(
+                                  level, progressValue),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
                             color: context.theme.levelProgressBarColor,
@@ -87,24 +89,25 @@ class ProfileCard extends StatelessWidget {
               const SizedBox(width: 8),
               Text.rich(
                 TextSpan(
-                  text: 'Balance: ',
+                  text: '${context.locale?.balance}: ',
                   style: context.textTheme.s18w600(context),
                   children: [
                     TextSpan(
                       text: balance.toStringAsFixed(2),
                       style: context.textTheme.s18w600(context).copyWith(
-                        fontStyle: FontStyle.italic,
-                        color: Colors.yellow,
-                      ),
+                            fontStyle: FontStyle.italic,
+                            color: Colors.yellow,
+                          ),
                     ),
                     const TextSpan(text: ' ₸'),
                   ],
                 ),
               ),
               const Spacer(),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('ADD'),
+              AppFilledButton(
+                text: context.locale?.refill ?? '',
+                onTap: () {},
+                isDense: true,
               ),
             ],
           ),

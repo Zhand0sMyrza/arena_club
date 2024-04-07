@@ -6,7 +6,6 @@ import 'package:arena_club/common/app_widgets/our_rating.dart';
 import 'package:arena_club/common/extensions/context_extension.dart';
 import 'package:arena_club/common/extensions/text_theme_extension.dart';
 import 'package:arena_club/common/extensions/theme_data_extension.dart';
-import 'package:arena_club/common/utils/formatter_utils.dart';
 import 'package:arena_club/data/models/game_model.dart';
 import 'package:arena_club/screens/game_news_screen/src/game_news_bloc/game_news_bloc.dart';
 import 'package:flutter/material.dart';
@@ -113,7 +112,7 @@ class GameCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Release date: ${Formatter.ddMMMyyyy(game.released)}',
+                      'Release date: ${game.released}',
                       style: context.textTheme.s12w400(context),
                     ),
                   ],

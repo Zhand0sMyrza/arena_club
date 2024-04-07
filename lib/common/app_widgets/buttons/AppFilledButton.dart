@@ -13,6 +13,7 @@ class AppFilledButton extends StatelessWidget {
     this.prefixIcon,
     this.enabled = true,
     this.loading = false,
+    this.isDense = false,
   });
 
   final VoidCallback? onTap;
@@ -22,6 +23,7 @@ class AppFilledButton extends StatelessWidget {
   final Icon? prefixIcon;
   final bool enabled;
   final bool loading;
+  final bool isDense;
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +36,8 @@ class AppFilledButton extends StatelessWidget {
       child: InkWell(
         onTap: loading ? null : onTap,
         child: Container(
-          width: double.maxFinite,
-          padding: const EdgeInsets.all(12),
+          // width: double.maxFinite,
+          padding: isDense? const EdgeInsets.all(8): const EdgeInsets.all(12),
           child: loading
               ? const Center(
                 child: SizedBox(

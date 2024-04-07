@@ -37,13 +37,10 @@ class AuthRepository implements BaseAuthRepository {
 
       return Token.fromRawJson(authResponse.toString());
     } else {
-      throw _errorText;
+      throw Exception();
     }
   }
 }
-
-const _errorText =
-    'Что-то пошло не так!\nПопробуйте ещё раз\n\nЛогин и пароль можете найти на Вашей карточке игрового клуба';
 
 const _mockAuthResponse =  r'''{
   "access_token": "ShrekVesit2TonnyIOhranyaetSvoeBoloto", 

@@ -9,7 +9,15 @@
       "username": {}
     }
   },
+  "library": "Library",
+  "profile": "Profile",
   "authGreetText": "Welcome to \"ArenaCLUB\" game club",
   "next": "Next",
-  "close": "Close"
+  "close": "Close",
+  "level": "Level",
+  "balance": "Balance",
+  "refill": "Refill",
+  "settings":"Settings",
+  "logout": "Logout",
+  "aboutArenaClub": "About \"ArenaCLUB\""
 }

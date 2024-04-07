@@ -9,7 +9,15 @@
       "username": {}
     }
   },
+  "library": "Библиотека",
+  "profile": "Профиль",
   "authGreetText": "Добро пожаловать в игровой клуб \"ArenaCLUB\"",
   "next": "Далее",
-  "close": "Закрыть"
+  "close": "Закрыть",
+  "level": "Уровень",
+  "balance": "Баланс",
+  "refill": "Пополнить",
+  "settings":"Настройки",
+  "logout": "Выйти",
+  "aboutArenaClub": "О \"ArenaCLUB\""
 }

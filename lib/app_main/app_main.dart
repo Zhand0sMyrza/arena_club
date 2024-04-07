@@ -11,72 +11,65 @@ class AppMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion(
-      value: const SystemUiOverlayStyle(
-        statusBarBrightness: _isLight ? Brightness.light : Brightness.dark,
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: _isLight ? Brightness.dark : Brightness.light,
-      ),
-      child: MaterialApp(
-        title: 'ArenaCLUB',
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          scaffoldBackgroundColor: ColorPalette.softBlack,
-          colorScheme: const ColorScheme.dark().copyWith(
-            primary: Colors.red,
+    return MaterialApp(
+      title: 'ArenaCLUB',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: ColorPalette.softBlack,
+        colorScheme: const ColorScheme.dark().copyWith(
+          primary: Colors.red,
+        ),
+        appBarTheme: const AppBarTheme(
+          color: ColorPalette.blackNeutral,
+          scrolledUnderElevation: 0,
+          surfaceTintColor: Colors.black,
+          foregroundColor: ColorPalette.redMain,
+          centerTitle: true,
+          toolbarHeight: 72,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness: _isLight? Brightness.light: Brightness.dark,
+            statusBarColor: Colors.transparent,
+            statusBarIconBrightness: Brightness.light,
           ),
-          appBarTheme: const AppBarTheme(
-            color: ColorPalette.blackNeutral,
-            scrolledUnderElevation: 0,
-            surfaceTintColor: Colors.black,
-            foregroundColor: ColorPalette.redMain,
-            centerTitle: true,
-            toolbarHeight: 72,
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarBrightness: Brightness.light,
-              statusBarColor: Colors.transparent,
-              statusBarIconBrightness: Brightness.light,
+        ),
+        indicatorColor: Colors.red,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            textStyle: MaterialStateProperty.all<TextStyle>(
+              const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          indicatorColor: Colors.red,
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ButtonStyle(
-              textStyle: MaterialStateProperty.all<TextStyle>(
-                const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(ColorPalette.blueMain),
+            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(ColorPalette.blueMain),
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-              shape: MaterialStateProperty.all<OutlinedBorder>(
-                const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
-              ),
-              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              ),
-              minimumSize: MaterialStateProperty.all<Size>(const Size(24, 24)),
-              maximumSize: MaterialStateProperty.all<Size>(const Size(80, 40)),
             ),
+            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+              const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            ),
+            minimumSize: MaterialStateProperty.all<Size>(const Size(24, 24)),
+            maximumSize: MaterialStateProperty.all<Size>(const Size(80, 40)),
           ),
-          textButtonTheme: TextButtonThemeData(
-            style: ButtonStyle(
-              overlayColor: MaterialStateProperty.all<Color>(Colors.black12),
-              shape: MaterialStateProperty.all<OutlinedBorder>(
-                const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            overlayColor: MaterialStateProperty.all<Color>(Colors.black12),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
             ),
           ),
         ),
-        home: const RootScreenFeature(),
       ),
+      home: const RootScreenFeature(),
     );
   }
 }

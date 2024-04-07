@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:arena_club/common/utils/formatter_utils.dart';
+
 class GamesListResponse {
   final List<GameModel> gamesList;
 
@@ -38,6 +40,8 @@ class GameModel {
     required this.metacritic,
     required this.reviewsCount,
   });
+
+   String get releaseDate => Formatter.ddMMMyyyy(released);
 
   factory GameModel.fromJson(Map<String, dynamic> json) {
     return GameModel(

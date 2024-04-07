@@ -1,5 +1,6 @@
 import 'package:arena_club/common/app_widgets/app_bar_title.dart';
 import 'package:arena_club/common/app_widgets/app_cached_network_image.dart';
+import 'package:arena_club/common/app_widgets/buttons/AppFilledButton.dart';
 import 'package:arena_club/common/app_widgets/buttons/tiled_button.dart';
 import 'package:arena_club/common/extensions/context_extension.dart';
 import 'package:arena_club/common/extensions/text_theme_extension.dart';
@@ -33,19 +34,19 @@ class ProfileScreen extends StatelessWidget {
           TiledButton(
             onTap: () {},
             icon: const Icon(Icons.settings_outlined),
-            label: 'Settings',
+            label: context.locale?.settings ?? '',
           ),
           const SizedBox(height: 4),
           TiledButton(
             onTap: () {},
             icon: const Icon(Icons.logout),
-            label: 'Logout',
+            label: context.locale?.logout ?? '',
           ),
           const Spacer(),
           TextButton(
             onPressed: () {},
             child: Text(
-              'About "ArenaCLUB"',
+              context.locale?.aboutArenaClub ?? '',
               style: context.textTheme.s14w400(
                 context,
                 context.theme.subtitleColor,
