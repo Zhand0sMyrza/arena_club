@@ -22,7 +22,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final callMethodChannel = const MethodChannel("com.example.flutter/call");
+  final callMethodChannel = const MethodChannel("com.example.flutter/arenaChannel");
 
   String btry = '123';
 
