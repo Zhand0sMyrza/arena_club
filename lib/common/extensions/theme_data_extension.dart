@@ -2,7 +2,9 @@ import 'package:arena_club/common/app_theme/color_palette.dart';
 import 'package:flutter/material.dart';
 
 extension ThemeDataExtension on ThemeData {
-  bool get isDark => brightness == Brightness.dark;
+  // Если б была смена темы
+  // bool get isDark => brightness == Brightness.dark;
+  bool get isDark => true;
 
   Color get bgColor => isDark ? ColorPalette.softBlack : ColorPalette.white;
 

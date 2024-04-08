@@ -56,6 +56,14 @@ class ProfileScreen extends StatelessWidget {
           const SizedBox(height: 4),
           TiledButton(
             onTap: () {
+
+            },
+            icon: const Icon(Icons.support_agent),
+            label: context.locale?.settings ?? '',
+          ),
+          const SizedBox(height: 4),
+          TiledButton(
+            onTap: () {
               context.read<AppMainBloc>().add(LogoutEvent());
             },
             icon: const Icon(Icons.logout),
