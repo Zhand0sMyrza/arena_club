@@ -27,10 +27,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String btry = '123';
 
   Future<void> callSupport(String number) async {
-    // await callMethodChannel.invokeMethod("callNumber", {'number': number});
-    final battery = await callMethodChannel.invokeMethod<int>("getBatteryLevel");
+    await callMethodChannel.invokeMethod("callNumber", {'number': number});
+    // final battery = await callMethodChannel.invokeMethod<int>("getBatteryLevel");
 
-    setState(() => btry = battery.toString());
+    // setState(() => btry = battery.toString());
   }
 
   @override
