@@ -9,8 +9,8 @@ class AppBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black87,
-      height: 72,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      height: 90,
+      padding: const EdgeInsets.fromLTRB(16,0,16,16),
       child:  Row(
         children: [
           _NavBarItem(
