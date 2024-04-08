@@ -9,12 +9,29 @@ import 'package:arena_club/common/extensions/text_theme_extension.dart';
 import 'package:arena_club/common/extensions/theme_data_extension.dart';
 import 'package:arena_club/screens/profile_screen/src/bloc/profile_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'components/profile_card.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final callMethodChannel = const MethodChannel("com.example.flutter/call");
+
+  String btry = '123';
+
+  Future<void> callSupport(String number) async {
+    await callMethodChannel.invokeMethod("callNumber", {'number': number});
+    // final battery = await callMethodChannel.invokeMethod<int>("getBatteryLevel");
+
+    // setState(() => btry = battery.toString());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +72,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           TiledButton(
-            onTap: () {
-
-            },
+            onTap: () => callSupport('77021112233'),
             icon: const Icon(Icons.support_agent),
             label: context.locale?.settings ?? '',
           ),
@@ -69,6 +84,8 @@ class ProfileScreen extends StatelessWidget {
             icon: const Icon(Icons.logout),
             label: context.locale?.logout ?? '',
           ),
+          const SizedBox(height: 24),
+          Text(btry),
           const Spacer(),
           TextButton(
             onPressed: () {},
