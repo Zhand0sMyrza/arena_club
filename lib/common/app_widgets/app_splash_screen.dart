@@ -9,7 +9,7 @@ class AppSplashScreen extends StatefulWidget {
 }
 
 class _AppSplashScreenState extends State<AppSplashScreen>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   late final AnimationController _bgAnimationController;
   bool _colorFlag = true;
 

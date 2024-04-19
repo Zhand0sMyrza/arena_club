@@ -1,4 +1,4 @@
-import 'package:arena_club/common/app_widgets/buttons/AppFilledButton.dart';
+import 'package:arena_club/common/app_widgets/buttons/app_filled_button.dart';
 import 'package:arena_club/common/app_widgets/dialogs/alert_dialog.dart';
 import 'package:arena_club/common/app_widgets/text_fields/filled_text_field.dart';
 import 'package:arena_club/common/extensions/context_extension.dart';

@@ -19,5 +19,7 @@
   "refill": "Пополнить",
   "settings":"Настройки",
   "logout": "Выйти",
-  "aboutArenaClub": "О \"ArenaCLUB\""
+  "aboutArenaClub": "О \"ArenaCLUB\"",
+  "callSupport": "Позвонить в поддержку",
+  "batteryLevel": "Уровень заряда:"
 }

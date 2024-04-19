@@ -132,10 +132,8 @@ class ProfileCard extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              AppFilledButton(
-                text: context.locale?.refill ?? '',
-                onTap: () {},
-                isDense: true,
+              SuperAnimatedButton(
+                onTap: (){},
               ),
             ],
           ),

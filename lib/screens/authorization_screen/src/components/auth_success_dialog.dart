@@ -1,4 +1,4 @@
-import 'package:arena_club/common/app_widgets/buttons/AppFilledButton.dart';
+import 'package:arena_club/common/app_widgets/buttons/app_filled_button.dart';
 import 'package:arena_club/common/extensions/context_extension.dart';
 import 'package:arena_club/common/extensions/text_theme_extension.dart';
 import 'package:arena_club/common/extensions/theme_data_extension.dart';

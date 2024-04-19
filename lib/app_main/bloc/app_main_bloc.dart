@@ -26,7 +26,6 @@ class AppMainBloc extends Bloc<AppMainEvent, AppMainState> {
     Emitter<AppMainState> emit,
   ) async {
     emit(AppSplashState());
-    emit(AppLoadingState(isLoading: true));
     await repo.init();
     authBloc.add(CheckAuthEvent());
     profileBloc.add(UpdateProfileEvent());
@@ -35,7 +34,6 @@ class AppMainBloc extends Bloc<AppMainEvent, AppMainState> {
     await Future.delayed(const Duration(seconds: 4));
 
     final isAuthorized = authBloc.isAuthorized;
-    emit(AppLoadingState(isLoading: false));
     emit(AppStartedState(isAuthorized: isAuthorized));
   }
 

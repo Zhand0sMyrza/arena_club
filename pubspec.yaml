@@ -26,6 +26,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   flutter_keyboard_visibility: ^6.0.0
   shimmer: ^3.0.0
+  vector_math: ^2.1.4
 
 dev_dependencies:
   flutter_test:

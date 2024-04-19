@@ -1,13 +1,13 @@
 import 'package:arena_club/app_main/bloc/app_main_bloc.dart';
 import 'package:arena_club/common/app_widgets/app_bar_title.dart';
 import 'package:arena_club/common/app_widgets/app_cached_network_image.dart';
-import 'package:arena_club/common/app_widgets/buttons/AppFilledButton.dart';
 import 'package:arena_club/common/app_widgets/buttons/tiled_button.dart';
 import 'package:arena_club/common/app_widgets/shimmer_placeholder.dart';
 import 'package:arena_club/common/extensions/context_extension.dart';
 import 'package:arena_club/common/extensions/text_theme_extension.dart';
 import 'package:arena_club/common/extensions/theme_data_extension.dart';
 import 'package:arena_club/screens/profile_screen/src/bloc/profile_bloc.dart';
+import 'package:arena_club/screens/profile_screen/src/components/animated_refill_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,15 +22,28 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final callMethodChannel = const MethodChannel("com.example.flutter/arenaChannel");
+  /// Пример использования MethodChannel
+  final callMethodChannel =
+      const MethodChannel("com.example.flutter/arenaChannel");
 
   String btry = '123';
 
   Future<void> callSupport(String number) async {
     await callMethodChannel.invokeMethod("callNumber", {'number': number});
-    // final battery = await callMethodChannel.invokeMethod<int>("getBatteryLevel");
+  }
 
-    // setState(() => btry = battery.toString());
+  Future<void> checkBatteryLevel() async {
+    final battery =
+        await callMethodChannel.invokeMethod<int>("getBatteryLevel");
+    if (mounted) {
+      setState(() => btry = battery.toString());
+    }
+  }
+
+  @override
+  void initState() {
+    checkBatteryLevel();
+    super.initState();
   }
 
   @override
@@ -74,7 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           TiledButton(
             onTap: () => callSupport('77021112233'),
             icon: const Icon(Icons.support_agent),
-            label: context.locale?.settings ?? '',
+            label: context.locale?.callSupport ?? '',
           ),
           const SizedBox(height: 4),
           TiledButton(
@@ -85,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             label: context.locale?.logout ?? '',
           ),
           const SizedBox(height: 24),
-          Text(btry),
+          Text('${context.locale?.batteryLevel} $btry'),
           const Spacer(),
           TextButton(
             onPressed: () {},
@@ -102,3 +115,5 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+
+

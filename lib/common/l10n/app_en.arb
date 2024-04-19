@@ -19,5 +19,7 @@
   "refill": "Refill",
   "settings":"Settings",
   "logout": "Logout",
-  "aboutArenaClub": "About \"ArenaCLUB\""
+  "aboutArenaClub": "About \"ArenaCLUB\"",
+  "callSupport": "Call support",
+  "batteryLevel": "Battery level:"
 }

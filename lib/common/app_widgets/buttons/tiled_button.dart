@@ -39,6 +39,7 @@ class TiledButton extends StatelessWidget {
                   Text(
                     label,
                     style: context.textTheme.s18w500(context),
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const Spacer(),
                   suffixIcon ?? const Icon(Icons.keyboard_arrow_right),
