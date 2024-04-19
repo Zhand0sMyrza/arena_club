@@ -24,8 +24,8 @@ class GameNewsBloc extends Bloc<GameNewsEvent, GameNewsState> {
   ) async {
     try{
       emit(GameNewsLoadingState(true));
-      // final result = await repo.gameNewsRepo.fetchGames(_page);
-      // _gamesList.addAll(result.gamesList);
+      final result = await repo.gameNewsRepo.fetchGames(_page);
+      _gamesList.addAll(result.gamesList);
       emit(GameNewsLoadingState(false));
       emit(GameNewsDataState(gamesList: _gamesList));
     } catch(e){

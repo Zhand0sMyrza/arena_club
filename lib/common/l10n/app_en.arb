@@ -21,5 +21,9 @@
   "logout": "Logout",
   "aboutArenaClub": "About \"ArenaCLUB\"",
   "callSupport": "Call support",
-  "batteryLevel": "Battery level:"
+  "batteryLevel": "Battery level:",
+  "gameRatings": "Game ratings:",
+  "ourRating": "Our rating:",
+  "play": "Play",
+  "releasedDate": "Released date:"
 }

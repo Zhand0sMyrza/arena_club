@@ -16,7 +16,7 @@ class OurRating extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'Our rating: ',
+          '${context.locale?.ourRating} ',
           style: context.textTheme.s14w600(context),
         ),
         Container(

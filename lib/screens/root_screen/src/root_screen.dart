@@ -5,6 +5,7 @@ import 'package:arena_club/common/app_widgets/app_splash_screen.dart';
 import 'package:arena_club/common/extensions/context_extension.dart';
 import 'package:arena_club/screens/authorization_screen/authorization_screen.dart';
 import 'package:arena_club/screens/authorization_screen/src/auth_screen_view_model.dart';
+import 'package:arena_club/screens/game_details_screen/game_details_route.dart';
 import 'package:arena_club/screens/game_news_screen/game_news_screen_route.dart';
 import 'package:arena_club/screens/profile_screen/profile_screen_route.dart';
 import 'package:arena_club/screens/root_screen/src/view_model.dart';
@@ -44,7 +45,13 @@ class RootScreen extends StatelessWidget {
                 children: [
                   Navigator(
                     key: vm.navigatorKeys[0],
-                    onGenerateRoute: gameNewsScreenRoute,
+                    onGenerateRoute: (settings) {
+                      if (settings.name == '/gameDetailsScreen') {
+                        return gameDetailsScreenRoute(
+                            settings, settings.arguments as int);
+                      }
+                      return gameNewsScreenRoute(settings);
+                    },
                   ),
                   Navigator(
                     key: vm.navigatorKeys[1],

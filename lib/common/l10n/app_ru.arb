@@ -21,5 +21,9 @@
   "logout": "Выйти",
   "aboutArenaClub": "О \"ArenaCLUB\"",
   "callSupport": "Позвонить в поддержку",
-  "batteryLevel": "Уровень заряда:"
+  "batteryLevel": "Уровень заряда:",
+  "gameRatings": "Оценки игры:",
+  "ourRating": "Наш рейтинг:",
+  "play": "Играть",
+  "releasedDate": "Дата релиза:"
 }
