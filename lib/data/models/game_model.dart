@@ -26,9 +26,7 @@ class GameModel {
   final String released;
   final String imagePath;
   final double rating;
-  final int ratingsCount;
   final int metacritic;
-  final int reviewsCount;
 
   const GameModel({
     required this.id,
@@ -36,9 +34,7 @@ class GameModel {
     required this.released,
     required this.imagePath,
     required this.rating,
-    required this.ratingsCount,
     required this.metacritic,
-    required this.reviewsCount,
   });
 
    String get releaseDate => Formatter.ddMMMyyyy(released);
@@ -50,9 +46,7 @@ class GameModel {
       released: json['released'],
       imagePath: json['background_image'],
       rating: json['rating'],
-      ratingsCount: json['ratings_count'],
       metacritic: json['metacritic'],
-      reviewsCount: json['ratings_count'],
     );
   }
 }

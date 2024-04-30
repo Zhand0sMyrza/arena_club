@@ -54,7 +54,7 @@ class GameDetailsScreen extends StatelessWidget {
                         delegate: SliverChildListDelegate(
                           [
                             AppFilledButton(
-                              text: 'Играть',
+                              text: context.locale?.play ?? '',
                               onTap: () {},
                               backgroundColor: context.theme.blueMain,
                               textColor: Colors.white,
@@ -68,7 +68,7 @@ class GameDetailsScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Оценки игры:',
+                                      context.locale?.gameRatings ?? '',
                                       style: context.textTheme.s18w600(context),
                                     ),
                                     const SizedBox(height: 8),

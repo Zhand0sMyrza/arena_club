@@ -27,6 +27,8 @@ dependencies:
   flutter_keyboard_visibility: ^6.0.0
   shimmer: ^3.0.0
   vector_math: ^2.1.4
+  mockito: ^5.4.4
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
