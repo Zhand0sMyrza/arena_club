@@ -1,0 +1,96 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42e5199a3f70555689be7018ee7f9f878d"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd424c46a41c41a9618754b57f72bfd0cb02"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd429da425bb6d6d5d8dbb95e4afffb82217"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42312b4bc59bbbe2c06c205bf4da6737f5"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42397d1949c19933d656e15d632cccabfd"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd4230037b09fee48cfce1f8562d753688c8"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd427ea64ee8d53085bf9edd1a57aaf8cbb5"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd4228cab1f188854e0a973e6ff6905c5ffe"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42e0be3b0d5ad56f1985578b1f97431765"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd423786431ce548989b846bbf1a7384f58e"
+    },
+    {
+      "guid" : "8699adb1dd336b26511df848a716bd42e9651202d0a161171fa030fce402f06d"
+    },
+    {
+      "guid" : "18c1723432283e0cc55f10a6dcfd9e0288a783a885d8b0b3beb2e9f90bde3f49"
+    }
+  ],
+  "containerPath" : "/Users/rus_dos/Documents/flutter_projects/arena_club/ios/Runner.xcworkspace",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.4",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/rus_dos/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/rus_dos/Library/Developer/Xcode/DerivedData/Runner-gkyjpxegquvswocinvsuxxzekjsl/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/rus_dos/Library/Developer/Xcode/DerivedData/Runner-gkyjpxegquvswocinvsuxxzekjsl/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone15,3",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "16.4",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone15,3",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "TARGET_DEVICE_IDENTIFIER" : "5264DCA5-C5C9-4383-B8E6-36A354117105",
+          "TARGET_DEVICE_MODEL" : "iPhone15,3",
+          "TARGET_DEVICE_OS_VERSION" : "16.4",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

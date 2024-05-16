@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "1e506f957f5b0b82b4a9b298a6fcfadbd801813e361042278479297e75ce60fc"
+build_start_time: [1712301346, 737316000]
+build_end_time: [1712301349, 198160000]
+inputs:
+  "/Users/rus_dos/Documents/flutter_projects/arena_club/ios/Runner/AppDelegate.swift": [1664393672, 0]
