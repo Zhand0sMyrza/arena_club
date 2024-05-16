@@ -96,7 +96,6 @@ class _GameNewsScreenState extends State<GameNewsScreen> {
                     key: _scrollKey,
                     itemCount: state.gamesList.length,
                     itemBuilder: (context, index) => GameCard(
-                      onLongPress: _overlayController.show,
                       game: state.gamesList[index],
 
                       /// Именованный роут использовал только для примера
@@ -117,4 +116,3 @@ class _GameNewsScreenState extends State<GameNewsScreen> {
     );
   }
 }
-
