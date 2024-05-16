@@ -25,5 +25,12 @@
   "gameRatings": "Game ratings:",
   "ourRating": "Our rating:",
   "play": "Play",
-  "releasedDate": "Released date:"
+  "releasedDate": "Released date:",
+  "youHaveMinutesLeft": "You have {hours}h {minutes}mins left",
+  "@youHaveMinutesLeft": {
+    "placeholders":{
+      "hours": {},
+      "minutes": {}
+    }
+  }
 }

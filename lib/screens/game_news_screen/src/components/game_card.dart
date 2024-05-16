@@ -8,15 +8,22 @@ import 'package:arena_club/data/models/game_model.dart';
 import 'package:flutter/material.dart';
 
 class GameCard extends StatelessWidget {
-  const GameCard({super.key, required this.game, required this.onTap});
+  const GameCard({
+    super.key,
+    required this.game,
+    required this.onTap,
+    required this.onLongPress,
+  });
 
   final GameModel game;
   final Function() onTap;
+  final Function() onLongPress;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
+      onLongPress: onLongPress,
       child: Container(
         padding: const EdgeInsets.all(12),
         margin: const EdgeInsets.symmetric(

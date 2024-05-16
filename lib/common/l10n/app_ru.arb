@@ -25,5 +25,12 @@
   "gameRatings": "Оценки игры:",
   "ourRating": "Наш рейтинг:",
   "play": "Играть",
-  "releasedDate": "Дата релиза:"
+  "releasedDate": "Дата релиза:",
+  "youHaveMinutesLeft": "У Вас отсалось {hours}ч {minutes}мин",
+  "@youHaveMinutesLeft": {
+    "placeholders":{
+      "hours": {},
+      "minutes": {}
+    }
+  }
 }

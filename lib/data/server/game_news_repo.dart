@@ -7,7 +7,7 @@ class GameNewsRepository implements BaseGameNewsRepository {
   final Dio dio;
   final String url;
 
-  GameNewsRepository({required this.dio, required this.url});
+  const GameNewsRepository({required this.dio, required this.url});
 
   @override
   Future<GamesListResponse> fetchGames(int page) async {
